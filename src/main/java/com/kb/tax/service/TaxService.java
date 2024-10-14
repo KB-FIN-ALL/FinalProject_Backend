@@ -15,7 +15,7 @@ public class TaxService {
 
     private final TaxMapper taxMapper;
 
-    public int getWeeklyTaxTotal() {
+    public Integer  getWeeklyTaxTotal() {
         LocalDate today = LocalDate.now();
         LocalDate oneWeekAgo = today.minusDays(7);
         return taxMapper.getTaxTotalForLastWeek(oneWeekAgo, today.minusDays(1));  // 오늘 제외하고 7일 전부터 어제까지 조회

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @Mapper
 public interface TaxMapper {
-    int getTaxTotalForLastWeek(@Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
+    Integer getTaxTotalForLastWeek(@Param("startDate") LocalDate startDate, @Param("endDate") LocalDate endDate);
 
     TaxPolicy selectTaxPolicyByType(String policyType);
 

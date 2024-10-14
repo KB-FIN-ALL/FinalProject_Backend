@@ -3,7 +3,7 @@
 
 <mapper namespace="com.kb.tax.mapper.TaxMapper">
 
-    <select id="getTaxTotalForLastWeek" parameterType="map" resultType="int">
+    <select id="getTaxTotalForLastWeek" parameterType="map" resultType="Integer">
         SELECT SUM(amount)
         FROM Tax
         WHERE DATE(transaction_date) BETWEEN #{startDate} AND #{endDate}
