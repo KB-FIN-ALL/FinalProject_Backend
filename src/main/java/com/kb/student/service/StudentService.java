@@ -54,7 +54,9 @@ public class StudentService {
             studentMapper.insertCSVStudent(studentcsvDTO);
         }
     }
-
+    public StudentProfileDTO getStudentProfile(long stdId) {
+        return studentMapper.getStudentProfileById(stdId);
+    }
     public List<StudentDTO> getAllStudents() {
         return studentMapper.getAllStudents();
     }

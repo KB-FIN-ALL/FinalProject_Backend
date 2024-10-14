@@ -18,4 +18,14 @@
         SET policy_type = #{policyType}, rate = #{rate}
         WHERE policy_id = #{policyId}
     </update>
+
+    <select id="getLatestWeeklyTax" resultType="com.kb.tax.dto.TaxPolicyDTO">
+        SELECT policy_id AS policyId,
+        policy_type AS policyType,
+        rate
+        FROM tax_policy
+        WHERE policy_type = 'Income Tax'
+        ORDER BY effective_date DESC
+        LIMIT 1
+    </select>
 </mapper>

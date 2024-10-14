@@ -130,15 +130,16 @@
             seed = #{student.seed}
         WHERE std_id = #{student.stdId}
     </update>
-  
-<!--
-    <update id="updateStudentInfo" parameterType="com.kb.student.dto.StudentDTO">
-        UPDATE student
-        SET std_name = #{stdName},
-            std_birth = #{stdBirth},
-            job_id = #{jobId},
-            seed = #{seed}
+
+    <select id="getStudentProfileById" resultType="com.kb.student.dto.StudentProfileDTO">
+        SELECT
+            std_id AS stdId,
+            std_name AS stdName,
+            std_account AS stdAccount,
+            std_birth AS stdBirth,
+            job_id AS jobId,
+            seed
+        FROM student
         WHERE std_id = #{stdId}
-    </update>
- -->
+    </select>
 </mapper>
